@@ -174,12 +174,12 @@ The database currently contains thousands of entries for protein-protein interfa
   \label{fig:pdbsum}
 \end{figure}
 
-However, the existing visual representations do not allow the user to interactively explore the contact zones using the combination of 3D and 2D information nor to compare different protein-protein interfaces.
+However, the existing visual representations do not allow the user to interactively explore the contact zones nor to compare different protein-protein interfaces.
 %The latter is helpful mainly in cases when the biochemists are searching for a proper contact zone for still unexplored combination of proteins but the interaction of some of these proteins with other ones was already revealed, annotated, and stored in the database. 
 The information from the existing databases can serve as a reference or guidance and the visual comparison is a necessity.
 This functionality is not available in the existing visualization tools.
 Current visual workflows employ the widely used tools for molecular visualization such as PyMol~\cite{pymol} or VMD~\cite{VMD} which are targeting a broad user base and do not focus on specialized visualizations for a given task.
-In consequence, the usage of general techniques is often impractical as it does not  provide the unecessary information to support a particular workflow.
+In consequence, the usage of general techniques is often impractical as it does not  provide the necessary information to support a particular workflow.
 An example can be the superposition of several possible conformations of two interacting proteins illustrated in Figure~\ref{fig:problem}.
 In this case, the proteins are represented by the cartoon visualization method and the colored proteins represent different possible positions with respect to the green (aligned) ones.
 It is obvious that such a cluttered representation cannot be used for an intuitive comparison of individual solutions.
@@ -204,16 +204,6 @@ In this case existing visualization tools do not even offer a minimally sufficie
 %It is not obvious how existing visualization technology can be adapted to the delineated problem of protein-protein interactions.
 %A substantial research effort is expected in order to investigate novel visualization techniques that could aid the analytic workflow (see Figure \ref{fig:workflow}). 
 
-In this project we do not aim only at designing specific visualizations for given tasks.
-Figure~\ref{fig:system} outlines the whole project and shows that this forms only one part of the planned activities.  
-Of course, individual visualizations form the essential part.
-On a higher abstraction level, we are targeting another two goals.
-The first one is to build a visual analysis system combining the proposed visualization methods into an intuitive and interactive environment where information from several visualizations are related to each other.
-Employing this system the users will be able to explore the interacting proteins and their contact zones according to their current tasks.
-As the data are complex but highly structured, the second goal is to build a formalized model on top of the visual analysis systems which would automatically suggest the most suitable tailored visual analysis approach for a specific set of tasks.
-In other words, based on the input set of the tasks, our newly proposed formalism will be able to suggest appropriate visualizations and propose their combination into the most suitable visual analysis tool with respect to the input tasks.
-
-
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.5\textwidth]{pics/system.png}
@@ -236,7 +226,10 @@ Therefore, a visual representation of such information is highly beneficial beca
   \label{fig:telomere}
 \end{figure}
 
-We believe that the outcomes of the project will significantly improve not only the protein-protein interaction analysis but establish a solid background for a better and more systematic approach to the design of specialized visualizations and visual analysis tools fulfilling the initial requirements also in different target domains.
+\section{Objectives}
+The first objective O1 is to design novel visualization metaphors supporting particular tasks. The second objective O2 is to build system for visual analysis combining the proposed visualization methods into an intuitive and interactive environment where information from several visualizations are related to each other. The third objective O3 is to formalize the theory for visual analytics frameworks design given a specific set of data and analytical goals. 
+The O1 advances visualization research with specific new methods, O2 provides an enabling technology for the domain of structural biology and O3 lays down the theory for visual analytics design.
+Figure~\ref{fig:system} outlines the whole project and shows that this forms only one part of the planned activities.  
 
 
 %The potential impact of the outcome of this project for the scientific discipline of structural biology is substantial.
@@ -375,9 +368,8 @@ The DCGD and SPEC groups already established a fruitful mutual cooperation in th
 The cooperation involves also PhD students performing a thorough study of existing approaches for protein-protein docking.
 Both research groups are affiliated with the same university so personal meetings are already happening and are easily organized on a regular basis.
  
-On the Austrian side, the project partner, the Computer Graphics Group of the Institute of Computer
-Graphics and Algorithms (ICGA) at the TU Wien, will be led by Ivan Viola, who has been already very active in the area of molecular visualization. 
-He worked on the acceleration of rendering of very large molecular systems~\cite{lampe} based on geometry shaders. 
+On the Austrian side, the project will be led by Ivan Viola, from the Institute of Computer Graphics and Algorithms (ICGA) at the TU Wien. 
+Viola worked on the acceleration of rendering of very large molecular systems~\cite{lampe} based on geometry shaders. 
 Later on, the group has focused on novel geometric representations using implicit surfaces~\cite{ParulekViola2012}, which is an enabling technology for the interactive visual analysis of surface cavities~\cite{parulek2012implicit,parulek13visualanalysis}. 
 The group also focused on an implicit hierarchical representation of molecules for the purpose of a seamless level of detail transition \cite{parulek13seamless}.
 The latest publications focus on the illustrative visualization of large molecular systems and the visual guidance concerning ongoing reactions in these systems \cite{Muzic2014}.
@@ -405,7 +397,7 @@ The DCGD and ICGA groups were also successful in obtaining a mutual mobility pro
 \section{Technical Description}
 \label{sec:TechnicalDescription}
 The project is driven by the needs of the functional proteomics research, which to date does not take advantage of effective analytical workflows based on visualization.
-It is unclear how to extend existing approaches reviewed in the previous section that would lead to a satisfactory solution of the yet untackled protein-protein interaction problem.
+It is unclear how to extend existing molecular visualization approaches reviewed in the previous section that would lead to a satisfactory solution of the yet untackled protein-protein interaction problem.
 In our proposed solutions, we will start out from relevant real-world problems the researchers are facing when exploring and comparing different conformations of interacting proteins.
 In tight cooperation between the project partners, these problems will be systematized into a set of tasks. 
 The proposed visual representations will then be designed to fulfill these tasks.
@@ -434,7 +426,7 @@ For this purpose, we plan to design several visual representations which will co
 On the highest level, the users should have an overview of all conformations which should be explored. 
 For this purpose, we suggest an abstracted interactive representation which enables the user to filter out conformations not fulfilling a given set of criteria (task T1).
 As an example, one such criterion could be the required pairs of interacting amino acids. 
-Such a representation will combine a matrix-based visualization with additional views highlighting the interacting amino acids in a selected conformation (task T2).
+Such a representation will combine a \textbf{matrix-based visualization} with additional views highlighting the interacting amino acids in a selected conformation (task T2).
 Figure~\ref{fig:matrix} illustrates these ideas. 
 %It consists of the matrix view and an interactive lens view where each rectangle corresponds to one conformation and for the conformation in the focus (center) the corresponding pairs of amino acids are connected.
 
@@ -447,12 +439,25 @@ Figure~\ref{fig:matrix} illustrates these ideas.
 
 As the exploration of molecules in 3D space is very natural for the biochemists, we plan to focus on it as well.
 However, as already shown in Figure~\ref{fig:problem}, simple superposition is not an acceptable solution as this leads to severe clutter and does not scale well with the number of conformations.
-Therefore we propose to adapt the technique of exploded views (see Figure~\ref{fig:matrix}) which will be equipped with a preview window (task T3).
+Therefore we propose to adapt the technique of \textbf{exploded views} (see Figure~\ref{fig:matrix}) which will be equipped with a preview window (task T3).
 In these previews, positioned close to the moved (exploded) protein, we will be able to present different information about the contact zones (tasks T4 and T5).
-Contact zones are very important but easily affected by occlusion problems. 
-Therefore we propose to present a trimmed semi-flattened view of the contact zone (positioned perpendicularly to the user; Fig.~\ref{fig:preview} left), the neighborhood map of individual amino acids in the contact zone (Fig.~\ref{fig:preview} middle), and their mutual distances using a height map (Fig.~\ref{fig:preview} right).
+Contact zones are very important but easily affected by occlusion problems.
+
+Therefore we propose to present a trimmed \textbf{semi-flattened view} of the contact zone (positioned perpendicularly to the user; Fig.~\ref{fig:preview} left), the \textbf{neighborhood map} of individual amino acids in the contact zone (Fig.~\ref{fig:preview} middle), and their mutual distances using a height map (Fig.~\ref{fig:preview} right).
 Here we suggest to embed a simplified contact zone representation into a comprehensive 3D context with the addition of supporting guiding lines.
 For individual conformations, these maps can be also visualized as illustrated in Figure~\ref{fig:map}.
+
+
+Among the approaches used for solving occlusion problems we plan to use aggregated visual representations which will find the best representative of a set of aligned reference proteins which are very similar with respect to their spatial orientation (see the set of aligned reference proteins in green in Figure~\ref{fig:problem}).
+The representative can be selected, e.g.,  as the median, average, or the most central from all the representations of the reference protein.
+For distributions of a single random variable, box plots are already widely used (and already extended to curves).
+However, we have to extend these concepts to complex geometric structures like molecular conformations, ensembles of molecular surfaces, and ensembles of secondary structures.
+
+Another possible solution will be the usage of reformations when we translate the problem to lower-dimensional representations which are simpler than the original 3D situation and which allow the user a standardized comparison. 
+In the context of protein-protein interactions, this means, e.g., to display the contact zones directly on the molecular surface of the interacting proteins, flatten these surfaces and show many contact zones as overlapping contours in this simplified representation.
+As the data has to be viewed with different levels of detail, we will introduce domain-semantic based "levels-of-complexity". 
+This will enable the user to explore, e.g, a contact zone, on different levels of abstraction or detail.
+To give an example, the contact zone can be viewed just as an entry in the list of all possible contact zones, it can be visualized as a surface in 3D, a 3D surface with indicated interacting amino acids, 3D surface with indicated properties of these amino acids, a 2D-flattened polygon, etc.
 
 \begin{figure}[ht]
 \centering
@@ -462,8 +467,12 @@ For individual conformations, these maps can be also visualized as illustrated i
 \end{figure}
 
 \subsubsection{Visualizing Multidocking Search-Space}
-Multidocking establishes a relationship between several molecules that form the molecular complex. 
-In this sense, the relationship in the contact zone set is no longer binary, but $n>2$-nary, and an edge becomes a hyperedge in a hypergraph. 
+Initially, we will use available docking computations to generate ensembles of pair-wise dockings among all involved proteins forming the complex. 
+Some contact zone candidates will naturally conflict with each other by competing for the same surface area. 
+We will investigate visualization metaphors such as a pairwise multidocking matrix (see Figure~\ref{fig:multidock2}), where the analyst can choose a particular contact among two proteins (task T6). 
+Attention will be guided to contact zones with other proteins from the same complex, which are affected by \emph{occupying} the surface area by selected interaction. As the interacting proteins form complexes consisting of more than two proteins (results of multidocking), the corresponding visual representations will also face this increased clutter and occlusion challenge. It is an open question how to tackle it and whether or not exploded views are still a meaningful metaphor for conveying structural propoerties of the interaction.
+
+Multidocking establishes a relationship between several molecules that form the molecular complex. In this sense, the relationship in the contact zone set is no longer binary, but $n>2$-nary, and an edge becomes a hyperedge in a hypergraph. 
 We envision a contact-zone hypergraph to depict all possible relationships in the molecular complex. 
 A hyperlink will essentially define one possible multidocking complex. 
 From such a visual representation, we can see all possible contact scenarios, which contact zones are central, and we can rank these according to the overall or minimal stability.
@@ -472,8 +481,6 @@ We will experiment with taking the hypergraph as a basis for a heterogeneous vis
 Even if these will be severely distorted, the visualization will still communicate important geometric, physical, and chemical properties. 
 This way, we will experiment with heterogeneous visualizations where the underlying relationships serve as the basis, and the structure augments further aspects on top of the basis.
 
-As the interacting proteins can form complexes consisting of more than two proteins (results of multidocking), the corresponding visual representations should also face this increased clutter and occlusion challenge.
-The task of the biochemists is to assess the plausibility of a multidocking complex.% (see Figure \ref{fig:multidocking}).
 
 %\begin{figure}[bh]
 %\centering
@@ -482,16 +489,12 @@ The task of the biochemists is to assess the plausibility of a multidocking comp
 %\label{fig:multidocking}
 %\end{figure}
 
-We will use available docking computations to generate ensembles of pair-wise dockings among all involved proteins forming the complex. 
-Some contact zone candidates will naturally conflict with each other by competing for the same surface area. 
-We will investigate visualization metaphors such as a pairwise multidocking matrix (see Figure~\ref{fig:multidock2}), where the analyst can choose a particular contact among two proteins (task T6). 
-Attention will be guided to contact zones with other proteins from the same complex, which are affected by \emph{occupying} the surface area by selected interaction. 
-
 \begin{wrapfigure}{r}{0.4\textwidth}
   \begin{center}
     \includegraphics[width=0.4\textwidth]{pics/multidock2.png}
   \end{center}
   \caption{Interactive multidocking matrix enabling to show the overview of all conformations between proteins P1 -- P5.}
+  \label{fig:multidock2}
 \end{wrapfigure}
 
 During the analysis, the history of contact-zone evaluation will be provided so that the analyst avoids reevaluating already assessed surfaces. 
@@ -503,7 +506,7 @@ Should the tested complex scenario turn out to be unstable, this information is 
 \subsubsection{Comparison of Conformations from Different Computational Tools}
 If the source of the input data is made-up by the results of various computational tools, it is not advisable to simply combine them into one common input.
 The main reason is that these tools produce slightly different output parameters (e.g., each tool computes its own scores). 
-Therefore, the proposed visualizations should also cope with this option and should be extended appropriately. 
+Therefore, the proposed visualizations should need to be extended. 
 For example, each cell in the matrix visualization illustrated in Figure~\ref{fig:matrix} will be divided according to the number of used computational tools and each part will correspond to one tool.
 Visual reduction operations based on semantic domain knowledge will reduce visual complexity in the context region.
 Such operations could be: take the worst/best solution, just highlight high-variance regions, indicate biased areas, etc.
@@ -526,41 +529,27 @@ All visualizations used in the tool will be interlinked and by using advanced br
 
 
 \subsection{Stage 2: Formalization of Visual Analysis Systems}
-As already mentioned, the input data in our domain of interest is very complex but also highly structured.
-This leads us to the suggestion to systematically formalize the features of this data and their relations.
-Here we will be inspired by a feature definition language proposed by Doleisch et al.~\cite{Doleisch} who presented a framework for flexible and interactive specification of high-dimensional and complex features in simulation data.
-It allows the definition of one or several features by brushing multiple dimensions and highlighting the selected features in all linked views.
-In our case, such features of the input data are, e.g., two interacting proteins, a set of interacting proteins (larger than two), contact zones, interacting amino acids, temporal changes of the proteins, etc. 
+If we look back in the visual analytics (VA) research in the past decade, there have been many VA frameworks proposed, which aid a completion of a particular visualization task. Many of them appear to have a similar high-level pattern, the mostly utilized pattern is the juxtaposition of different views which reveal a one or few aspects of a multi-dimensional phenomenon. A VA framework typically provides views for each aspect that is necessary to understand to accomplish a given analytical task. These aspects are linked together so that their mutual relationships can be understood as well. These are the famous multiple coordinated views.
+
+Our task analysis, of which preliminary results are listed in the previous section offers several scenarios for which a tailor-made VA framework can be designed. Until now, this has been done by visualization experts themselves. However, in case we have a clear structure about the aspects which describe a given phenomenon and at the same time we have clearly defined tasks, we hypothesize that it should be possible to design the VA framework algorithmically. In the second stage of the proposed research we will focus on developing a formalism for a VA design and contribute to the theoretical foundations to this emerging subfield of visualization. 
 
 To propose a formal systematization for such structured data, the overall goal is to enable a systematic exploration of the underlying design space of possible visual representations and interactions.
 Until now, when designing visualizations for a specific target domain, the typical procedure is to perform an analysis of requirements and according to them design the most suitable visualizations for the whole visual analysis system. 
 However, this obviously leads to a constantly repeating process (even for slight task changes) which is based on the same principles and mostly ad-hoc approaches have been used to propose a specific visual representation for a specific task situation at hand.
 Therefore, a drill down into relevant subparts of the highly structured data must be done with typical database queries but with a strong domain semantic from our application area. 
 Operations used for the extraction of these subparts could be, e.g., slicing, dicing, projections, aggregations, etc. 
-For each of these operations the appropriate visual templates have to be developed.
+For each of these operations the appropriate visual templates need to be developed.
 
 The selection of relevant subparts will be driven by the user-defined tasks.
 These tasks are likewise highly complex and are usually formed by the combination of much simpler basic tasks, such as T1, ..., T6 mentioned in the Stage 1 of the proposal. 
 As the set of basic tasks can be large and combining them creates a vast space of possible queries, we need a systematic formalization here as well.
-In order to propose the formal system based on different user tasks, the definition of these tasks has to be structured as well. 
-Therefore, we will create a domain-specific language for the definition of these tasks which will serve as a meta-language for the automatic selection of relevant visualizations and their integration into the overall visual analysis system.
-The syntax of the language will combine traditional commands of programming languages with naming conventions of the given domain.
-The functions derived from a set of basic as well as complex tasks will form the basis of the semantic meaning of the language.
+In order to propose the formal system based on different user tasks, the definition of these tasks has to be structured as well. We will base our considerations on the recent task taxonomies in the visualization research literature. 
 
-The visualization of the structured data in the context of the complex tasks provides challenges as well, because we have to face problems with occlusion, visual clutter, and heavy overlaps when for example simultaneously comparing several conformations of protein-protein interactions.
-Among the approaches used for solving these problems we plan to use aggregated visual representations which will find the best representative of a set of aligned reference proteins which are very similar with respect to their spatial orientation (see the set of aligned reference proteins in green in Figure~\ref{fig:problem}).
-The representative can be selected, e.g.,  as the median, average, or the most central from all the representations of the reference protein.
-For distributions of a single random variable, box plots are already widely used (and already extended to curves).
-However, we have to extend these concepts to complex geometric structures like molecular conformations, ensembles of molecular surfaces, and ensembles of secondary structures.
+Instead of defining the VA design explicitly, the specification will be of a declarative nature so that even a domain specialist would be able to implicitly author the VA framework.
+For specification we will create a domain-specific language for the definition of these tasks which will serve as a meta-language for the automatic selection of relevant visualizations and their integration into the overall visual analysis system. The syntax of the language will combine traditional commands of programming languages with naming conventions of the given domain. The functions derived from a set of basic as well as complex tasks will form the basis of the semantic meaning of the language. Here we will be inspired by a feature definition language proposed by Doleisch et al.~\cite{Doleisch} who presented a framework for flexible and interactive specification of high-dimensional and complex features in simulation data. It allows the definition of one or several features by brushing multiple dimensions and highlighting the selected features in all linked views.
+In our case, such features of the input data are, e.g., two interacting proteins, a set of interacting proteins (larger than two), contact zones, interacting amino acids, temporal changes of the proteins, etc. 
 
-Another possible solution will be the usage of reformations when we translate the problem to lower-dimensional representations which are simpler than the original 3D situation and which allow the user a standardized comparison. 
-In the context of protein-protein interactions, this means, e.g., to display the contact zones directly on the molecular surface of the interacting proteins, flatten these surfaces and show many contact zones as overlapping contours in this simplified representation.
-As the data has to be viewed with different levels of detail, we will introduce domain-semantic based "levels-of-complexity". 
-This will enable the user to explore, e.g, a contact zone, on different levels of abstraction or detail.
-To give an example, the contact zone can be viewed just as an entry in the list of all possible contact zones, it can be visualized as a surface in 3D, a 3D surface with indicated interacting amino acids, 3D surface with indicated properties of these amino acids, a 2D-flattened polygon, etc.
-
-To summarize, the overall goal is to provide a systematic exploration of the visualization design space for the specific application.
-So we expect that such a proposed formalism will be the basis for systematically proposing visual analysis systems for different target domains as well.
+A naive approach to build a VA workflow would be to include all possible visualizations from the predefined set to show all possible kinds of relationships. If the display estate is huge, such approach is possible to implement. However, this would result of too much of visual information to be effectively consumable during the analysis workflow. Humans have only limited field of view, they could be easily overwhelmed, so the display space needs to be utilized so that every visualization. The VA design would then be constrained from both sides, necessity to show particular visual information and availability of visual estate.
 
 %Moreover, when dealing with large-input, heterogeneous data and complex tasks, the design process usually covers only a small subset of possible tasks.  
 %If the input data is highly structured, such as in our case of protein-protein interactions, we can propose visualizations focusing on different aspects of the input dataset.
