@@ -519,12 +519,12 @@ Such operations could be: take the worst/best solution, just highlight high-vari
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Stage 2: Visual Analysis of Interactions}
-In the second stage of the project, we will propose several combinations of the visualization techniques, proposed in Stage 1, into visual analysis tools aiming to provide the users with an intuitive and interactive environment supporting their tasks.
+In the second stage of the project, we will propose several combinations of the visualization techniques proposed in Stage 1, into visual analysis tools aiming to provide the users with an intuitive and interactive environment supporting their tasks.
 However, the input data as well as the tasks can be highly complex which will in consequence lead to too complex visual analysis tools containing too many linked views.
-As a solution this this problem we will propose a simplification of such tools.
+As a solution to this problem we will propose a semi-automatic simplification of such tools through adaptation.
 It will be based on the tracking of user interaction with a given tool when performing a specific task.
 Based on the interaction history with individual views (i.e., how often the view was used by the user) we will decide which views should be removed or replaced by other ones. 
-This user-centered approach to the design of the visual analysis tool tailored to a specific set of tasks will enable to utilize such tool very effectively.
+This user-centered approach to the design of the visual analysis tool tailored to a specific set of tasks will enable to utilize such a tool very effectively.
 
 %According to the set of the tasks defined by the domain experts, we will propose the set-up of the resulting tool.
 All visualizations used in the tool will be interlinked and by using advanced brushing methods the tool will serve exploration, comparison, simplification, and other required functionality.
@@ -532,19 +532,19 @@ All visualizations used in the tool will be interlinked and by using advanced br
 
 
 
-\subsection{Stage 3: Formalism of Visual Analysis Systems}
+\subsection{Stage 3: Formalization of Visual Analysis Systems}
 As already mentioned, the input data in our domain of interest is very complex but also highly structured.
-This leads us to the suggestion to formalize the features of this data and their relations.
+This leads us to the suggestion to systematically formalize the features of this data and their relations.
 Here we will be inspired, by a feature definition language proposed by Doleisch et al.~\cite{Doleisch} who presented a framework for flexible and interactive specification of high-dimensional and complex features in simulation data.
 It allows the definition of one or several features by brushing multiple dimensions and highlighting the selected features in all linked views.
-In our case, among such features of the input data belong, e.g., two interacting proteins, set of interacting proteins (larger than two), contact zones, interacting amino acids, temporal changes of the proteins, etc. 
+In our case, such features of the input data are, e.g., two interacting proteins, a set of interacting proteins (larger than two), contact zones, interacting amino acids, temporal changes of the proteins, etc. 
 
-When aiming to propose a formal systematization for such structured data, the overall goal is to enable a systematical exploration of the underlying design space of possible visual representations and interactions.
+To propose a formal systematization for such structured data, the overall goal is to enable a systematic exploration of the underlying design space of possible visual representations and interactions.
 Until now, when designing visualizations for a specific target domain, the typical procedure is to perform an analysis of requirements and according to them design the most suitable visualizations for the whole visual analysis system. 
-However, this obviously leads to a constantly repeating process which is based on the same principles and mostly ad-hoc approaches have been used to propose a specific visual representation for a specific task situation at hand.
-Therefore, a drill down into relevant subparts of the highly structured data must by done with typical database queries but with a strong domain semantic from our application domain. 
+However, this obviously leads to a constantly repeating process (even for slight task changes) which is based on the same principles and mostly ad-hoc approaches have been used to propose a specific visual representation for a specific task situation at hand.
+Therefore, a drill down into relevant subparts of the highly structured data must by done with typical database queries but with a strong domain semantic from our application area. 
 Operations used for the extraction of these subparts could be, e.g., slicing, dicing, projections, aggregations, etc. 
-For each of these operations the visual templates are already proposed.
+For each of these operations the appropriate visual templates have to be developed.
 
 The selection of relevant subparts will be driven by the user-defined tasks.
 These tasks are likewise highly complex and are usually formed by the combination of much simpler basic tasks, such as T1, ..., T6 mentioned in the Stage 1 of the proposal. 
@@ -554,20 +554,20 @@ Therefore, we will specify a domain-specific language for the definition of thes
 The syntax of the language will combine traditional commands of programming languages with naming conventions of the given domain.
 The functions derived from a set of basic as well as complex tasks will form the basis of the semantic meaning of the language.
 
-The visualization of these structured data and the complex tasks provides challenges as well because we have to face problems with occlusion, visual clutter, and heavy overlaps when comparing more conformations of protein-protein interactions.
+The visualization of the structured data in the context of the complex tasks provides challenges as well because we have to face problems with occlusion, visual clutter, and heavy overlaps when for example simultaneously comparing several conformations of protein-protein interactions.
 Among the approaches used for solving these problems we plan to use aggregated visual representations which will find the best representative of a set of aligned reference proteins which are very similar with respect to their spatial orientation (see the set of aligned reference proteins in green in Figure~\ref{fig:problem}).
 The representative can be selected, e.g.,  as the median, average, or the most central from all the representations of the reference protein.
-Then, for distributions of a single random variable, box plots will used (already extended to curves).
+For distributions of a single random variable, box plots are already widely used (and already extended to curves).
 However, we have to extend these concepts to complex geometric structures like molecular conformations, ensembles of molecular surfaces, and ensembles of secondary structures.
 
-Another possible solution will be the usage of reformations when we translate the problem to lower-dimensional representations which are simpler than the original 3D situation and which allow a standardized comparison. 
+Another possible solution will be the usage of reformations when we translate the problem to lower-dimensional representations which are simpler than the original 3D situation and which allow the user a standardized comparison. 
 In the context of protein-protein interactions, this means, e.g., to display the contact zones directly on the molecular surface of the interacting proteins, flatten these surfaces and show many contact zones as overlapping contours in this simplified representation.
-As the data has to be viewed in different detail, we will introduce the "levels-of-complexity". 
+As the data has to be viewed with different levels of detail, we will introduce domain-semantic based "levels-of-complexity". 
 This will enable the user to explore, e.g, a contact zone, on different levels of abstraction or detail.
-To give an example, the contact zone can be viewed just as an entry in the list of all possible contact zones, it can be visualized as a surface in 3D, a 2D-flattened polygon, a 3D surface with indicated interacting amino acids, 3D surface with indicated properties of these amino acids, etc.
+To give an example, the contact zone can be viewed just as an entry in the list of all possible contact zones, it can be visualized as a surface in 3D, a 3D surface with indicated interacting amino acids, 3D surface with indicated properties of these amino acids, a 2D-flattened polygon, etc.
 
 To summarize, the overall goal is to provide a systematic exploration of the visualization design space for the specific application.
-So we expect that such a proposed formalism will form the basis for systematically proposing visual analysis systems for different target domains as well.
+So we expect that such a proposed formalism will be the basis for systematically proposing visual analysis systems for different target domains as well.
 
 %Moreover, when dealing with large-input, heterogeneous data and complex tasks, the design process usually covers only a small subset of possible tasks.  
 %If the input data is highly structured, such as in our case of protein-protein interactions, we can propose visualizations focusing on different aspects of the input dataset.
