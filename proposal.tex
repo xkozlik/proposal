@@ -136,13 +136,6 @@ The main goal in studying such protein-protein interactions is to identify an ap
 These studies span from investigating interactions between two protein structures to exploring large multi-molecular complexes.
 Every subunit of such complexes makes its contacts with neighboring subunits under a specific spatial orientation that is critical for the function of the whole complex.
 
-\begin{wrapfigure}{l}{0.6\textwidth}
-  \begin{center}
-  \includegraphics[width=0.6\textwidth]{pics/docking.png}
-	\end{center}
-  \caption{Two protein chains and their mutual interaction.}
-  \label{fig:dock}
-\end{wrapfigure}
 
 Protein structures studied with respect to their mutual interactions are primarily defined by the sequences of amino acids. 
 This 1D sequential information does not give any explicit information about the spatial conformation of the protein chain.
@@ -155,12 +148,25 @@ This process is called \textit{molecular docking}.
 Existing approaches calculate a mutual conformation of two interacting proteins and suggest several most probable contact zones~\cite{huang}. 
 The subsequent task is to evaluate the biochemical relevance of these results. 
 Such an evaluation is nowadays performed using manual comparisons or utilizing traditional 3D visualization methods which have been used in molecular visualization for decades.
+\setlength\intextsep{0pt}
+\begin{wrapfigure}{l}{0.6\textwidth}
+  \vspace{-5mm}
+	\begin{center}
+  \includegraphics[width=0.6\textwidth]{pics/docking.png}
+	\end{center}
+	\vspace{-5mm}
+  \caption{Two protein chains and their mutual interaction.}
+  \label{fig:dock}
+\end{wrapfigure}
 The main limitations of the existing methods are the occlusion caused by the 3D environment, hidden contact zones, and high overlaps when comparing more conformations (see Figure~\ref{fig:problem}).
 
+\setlength\intextsep{0pt}
 \begin{wrapfigure}{l}{0.4\textwidth}
+\vspace{-5mm}
 \begin{center}
 \includegraphics[width=0.4\textwidth]{pics/problem.png}
 \end{center}
+\vspace{-5mm}
 \caption{Superposition of several possible conformations between two proteins visualized using a traditional cartoon method. The set of green protein instances corresponds to one of the proteins in the interaction, the colored components represent the second protein in different conformations. Due to the high visual overlap, this visualization does not allow a clear comparison.}
 \label{fig:problem}
 \end{wrapfigure}
@@ -169,10 +175,13 @@ While there are many existing algorithms searching for protein-protein docking, 
 A similar situation holds for the already determined contacts between proteins which are available, e.g., in the PDBsum database~\cite{pdbsum}.
 The database currently contains thousands of entries for protein-protein interfaces which capture the 3D mutual orientation of the docked proteins using JMol~\cite{jmol} and provides the users with an abstracted static representation of the contact zones (see Figure~\ref{fig:pdbsum}).
 
+\setlength\intextsep{0pt}
 \begin{figure}[bt]
+  \vspace{-5mm}
   \centering
   \includegraphics[width=0.8\textwidth]{pics/pdbsum3.png}
-  \caption{Existing visual representations of the crystal structure of complex SMC3-Scc1 with ID 4UX3 stored in the PDBsum database. Left: 3D structure, middle: abstracted representation of the contact zones between the chains, right: detailed interactions between individual amino acids as represented in the PDBsum database.}
+  \vspace{-5mm}
+	\caption{Existing visual representations of the crystal structure of complex SMC3-Scc1 with ID 4UX3 stored in the PDBsum database. Left: 3D structure, middle: abstracted representation of the contact zones between the chains, right: detailed interactions between individual amino acids as represented in the PDBsum database.}
   \label{fig:pdbsum}
 \end{figure}
 
@@ -194,6 +203,15 @@ It is obvious that such a cluttered representation cannot be used for an intuiti
 %It enables one amino acid in the protein chain to be replaced by another one in order to change the protein properties.
 %In-silico identification and mutagenesis of one crucial hot spot of each of the proposed docking models will provide a major target for the experimental mutagenesis approach. 
 %This can significantly reduce the number of the real protein mutants required for the determination of the real contact zone.
+\setlength\intextsep{0pt}
+\begin{wrapfigure}{l}{0.5\textwidth}
+  \begin{center}
+  \includegraphics[width=0.5\textwidth,height=0.48\textwidth]{pics/telomer.png}
+	\end{center}
+	\vspace{-20pt}
+  \caption{Architecture and composition of SMC complexes (taken from Pale\v{c}ek and Gruber~\cite{Palecek2015}). These complexes will serve in the evaluation of the usability of our proposed visualizations and visual analysis tools.}
+  \label{fig:telomere}
+\end{wrapfigure}
 
 With respect to the docking problem, the current solutions focus mainly on searching for possible interactions between two proteins.
 However, proteins can also form more complicated \textit{complexes of proteins} where several protein structures interact with each other.
@@ -206,15 +224,6 @@ In this case existing visualization tools do not even offer a minimally sufficie
 %It is not obvious how existing visualization technology can be adapted to the delineated problem of protein-protein interactions.
 %A substantial research effort is expected in order to investigate novel visualization techniques that could aid the analytic workflow (see Figure \ref{fig:workflow}). 
 
-\begin{wrapfigure}{l}{0.5\textwidth}
-\begin{center}
-\includegraphics[width=0.5\textwidth,height=0.7\textwidth]{pics/systemsmall.png}
-\end{center}
-\caption{Overview of the project outline. In Stage 1 we will focus on designing specific visualizations for given tasks and building visual analysis systems consisting of these visualizations. Stage 2 proposes a formalized model of the visual analysis systems which will focus on specific tasks Ti.}
-\label{fig:system}
-\end{wrapfigure}
-
-
 As a part of the research project, the novel visualization technology will be tested with the ongoing biological research at the Department of Functional Genomics and Proteomics (DFGP), located at the Faculty of Science at the Masaryk University in Brno. 
 The focus of interest of researchers at DFGP is on SMC (structure maintenance of chromosome), telomere-associated, and other chromatin complexes. 
 The SMC complexes are key players in chromatin organization and dynamics (e.g., the condensin complex ensures a proper condensation of chromosomes -- see Figure~\ref{fig:telomere} taken from Pale\v{c}ek and Gruber~\cite{Palecek2015}) and are the main focus of the Pale\v{c}ek's group.
@@ -222,25 +231,26 @@ Pale\v{c}ek's group (group of Structural Proteins of Eukaryotic Chromosomes; SPE
 Their goal is to uncover the way how the subunits of these complexes interact with each other and execute unique function(s) of these complexes. 
 Therefore, a visual representation of such information is highly beneficial because it helps to reveal the spatial relationships between the subunits in an intuitive way.
 
-\begin{wrapfigure}{l}{0.55\textwidth}
-  \begin{center}
-  \includegraphics[width=0.55\textwidth,height=0.48\textwidth]{pics/telomer.png}
-	\end{center}
-	\vspace{-20pt}
-  \caption{Architecture and composition of SMC complexes (taken from Pale\v{c}ek and Gruber~\cite{Palecek2015}). These complexes will serve in the evaluation of the usability of our proposed visualizations and visual analysis tools.}
-  \label{fig:telomere}
-\end{wrapfigure}
 
 \section{Objectives}
-The first objective O1 is to design novel visualization metaphors supporting particular tasks. The second objective O2 is to build system for visual analysis combining the proposed visualization methods into an intuitive and interactive environment where information from several visualizations are related to each other. The third objective O3 is to formalize the theory for visual analytics frameworks design given a specific set of data and analytical goals. 
-The O1 advances visualization research with specific new methods, O2 provides an enabling technology for the domain of structural biology and O3 lays down the theory for visual analytics design.
-Figure~\ref{fig:system} outlines the whole project and shows that this forms only one part of the planned activities.  
+The objectives of the project follow its two stages which are depicted in Figure~\ref{fig:system}.
+The first objective is to design novel visualization metaphors supporting particular tasks and to build a system for visual analysis combining the proposed visualization methods into an intuitive and interactive environment.
+The second objective is related with the fact that visual analytics frameworks are currently being developed in many fields of sciences to support the analytical workkflows of specialists. 
+However, they lack a systematic formalization of the design choices.
+It is the case of our underlying domain problem as well. 
+We want to use this use case for advancing conceptual level of visual analytics by proposing a formalization of the theory for visual analytics frameworks design given a specific set of data and analytical goals.
 
-
+\setlength\intextsep{0pt}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\vspace{-5mm}
+\begin{center}
+\includegraphics[width=0.5\textwidth,height=0.7\textwidth]{pics/systemsmall.png}
+\end{center}
+\vspace{-5mm}
+\caption{Overview of the project outline. In Stage 1 we will focus on designing specific visualizations for given tasks and building visual analysis systems consisting of these visualizations. Stage 2 proposes a formalized model of the visual analysis systems which will focus on specific tasks Ti.}
+\label{fig:system}
+\end{wrapfigure}
 %The potential impact of the outcome of this project for the scientific discipline of structural biology is substantial.
-
-
-
 %To enable efficient visual comparison of complex protein structures, we will develop a semantically-driven flattening approaches so that important aspects of an entire surface of particular 3D structure will be described in one image. Furthermore, we will link or directly integrate meaningful information visualization techniques such as matrices, ranking representations, or hypergraphics with spatial visualization, resulting into comprehensive heterogeneous visualizations able to communicate a large picture of multiple aspects of the underlying data. We will develop new visual guidance techniques based on controlling movement of molecular dynamics simulations driven by domain semantics, propose new suggestive visualizations that will help to propose the most appropriate candidate amino acids for mutagenesis, and multidocking will be guided so that the analyst is not lost in the complexity and clearly understands which multidocking conformations are physically plausible.
 
 
@@ -250,9 +260,6 @@ Figure~\ref{fig:system} outlines the whole project and shows that this forms onl
 %  \caption{Architecture of the SMC5/6 complex.}
 %  \label{fig:complex}
 %\end{figure}
-
-
-
 % Section: State of the Art ---------------------------------------------------
 \section{State of the Art}
 \label{sec:StateOfTheArt}
@@ -281,10 +288,13 @@ Existing visual representations of computed structures (pathways or contact zone
 However, such a 3D visualization is rather limited, mainly with respect to depicting many properties (physico-chemical, geometric) of the amino acids forming the pathways or contact zones. In such cases an abstracted representation is more appropriate. 
 An example of this was presented by Heinrich et al.~\cite{Heinrich2014} where the authors use parallel coordinates to convey many attributes of amino acids (see Figure~\ref{fig:parallel}). 
 
+\setlength\intextsep{0pt}
 \begin{wrapfigure}{l}{0.49\textwidth}
+\vspace{-5mm}
   \begin{center}
   \includegraphics[width=0.49\textwidth]{pics/parallel2.png}
 	\end{center}
+\vspace{-5mm}
   \caption{Parallel coordinates showing different amino acid attributes. Each amino acid is represented as a polyline. Image taken from Krone et al.~\cite{Krone2014}.}
   \label{fig:parallel}
 \end{wrapfigure}
@@ -300,7 +310,7 @@ One of the most common methods is to represent the contact zone by its surface.
 
 There are many publications focusing on the visualization of molecular surfaces.
 Here we will mention only the latest results in this field.
-In 2012, Parulek and Viola~\cite{ParulekViola2012} presented the first ray-casting of the so called solvent excluded surface that does not need a pre-computation of the analytical description of the surface.
+In 2012, Parulek and Viola~\cite{ParulekViola2012} presented the first ray-casting of the so called solvent excluded surface that does not need a precomputation of the analytical description of the surface.
 They use a modified sphere tracing and directly compute the implicit description of the surface based on the local neighborhood of a ray.   
 In contrast to these direct ray-casting approaches, Decherchi and Rocchia~\cite{Decherchi2013} presented a new triangulation method based on ray-casting. 
 It performs ray-casting through a 3D grid from which the surface is extracted using the Marching Cubes algorithm. 
@@ -316,10 +326,13 @@ The contact zone has been studied in a method published by Lee and Varshney~\cit
 Their approach uses the hypothesis that the intermolecular volume and the area between docked molecules is useful as a measure of the shape complementarity. 
 Therefore they propose an algorithm for the interactive computation of a so called intermolecular negative volume. In combination with dedicated visual representations (see Figure~\ref{fig:varshney}), it can serve the domain experts as an interactive tool for studying possible docking conformations.
 
+\setlength\intextsep{0pt}
 \begin{wrapfigure}{l}{0.48\textwidth}
+\vspace{-5mm}
   \begin{center}
   \includegraphics[width=0.48\textwidth]{pics/varshney2.png}
 	\end{center}
+\vspace{-5mm}
   \caption{Visual representations of the contact zones proposed by Lee and Varshney. a) Translucent surfaces, b) Intermolecular negative volume between molecules, c) Intermolecular volume only. Image taken from Lee and Varshney~\cite{Lee2006}}.
   \label{fig:varshney}
 \end{wrapfigure}
@@ -349,9 +362,12 @@ Parulek et al.~\cite{parulek2012implicit} utilize implicit surfaces for an inter
 They introduce linked views together with a 3D visualization of extracted cavities coupled with graph statistics in the context of the molecular surface (see Figure~\ref{parulek}). 
 In 2013, Parulek et al.~\cite{parulek13visualanalysis} published an approach for the extraction of cavities and their visual exploration in molecular dynamics simulations. 
 
+\setlength\intextsep{0pt}
 \begin{figure}[ht]
+\vspace{-5mm}
 \centering
 \includegraphics[width=0.7\textwidth]{pics/parulek2.png}
+\vspace{-5mm}
 \caption{Combination of a 3D view onto the structure containing a cavity with scatterplots \cite{parulek2012implicit}.}
 \label{parulek}
 \end{figure}
@@ -396,7 +412,7 @@ This time the study concentrated on the whole tunnel along its centerline, chang
 This paper was presented at the IEEE VIS 2015 conference and was published in the IEEE TVCG (Transactions on Visualization and Computer Graphics) journal~\footnote{http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=2945}.
 The third paper was a state-of-the-art report on molecular visualization where nine authors from several institutions joined their efforts~\cite{kozlikova_visualization_2015}. 
 This report has been coordinated by Dr. Kozl\'{i}kov\'{a} and was accepted and presented at the EuroVis 2015 conference. The report was also invited for publication in the Computer Graphics Forum journal.
-The report was followed by a survey submitted to the EuroVis 2016 conference which is currently under review. 
+The report was followed by a survey accepted to the EuroVis 2016 conference. 
 It focuses on the analysis and visualization of molecular cavities.
 
 The DCGD and ICGA groups were also successful in obtaining a mutual mobility project (the OeAD ICM through project CZ 17/2015) for 2015 and 2016.
@@ -411,13 +427,13 @@ It is unclear how to extend existing molecular visualization approaches reviewed
 In our proposed solutions, we will start out from relevant real-world problems the researchers are facing when exploring and comparing different conformations of interacting proteins.
 In tight cooperation between the project partners, these problems will be systematized into a set of tasks. 
 The proposed visual representations will then be designed to fulfill these tasks.
-Such tasks can be, e.g., T1: explore all possible conformations and easily filter out those conformations which are probably biochemically irrelevant, T2: briefly explore the individual conformations and their pairs of amino acids to support the decision process of task T1, T3: explore several conformations in a 3D view, along with the position of their contact zones, T4: explore the shape of the contact zones, T5: explore individual amino acids in the contact zones, their interaction and physico-chemical properties, T6: explore all possible conformations for multidocking, etc.
+Such tasks can be, e.g., T1: explore all possible conformations and easily filter out those conformations which are probably biochemically irrelevant, T2: briefly explore the individual conformations and their pairs of amino acids to support the decision process of task T1, T3: explore and compare the 3D shape of several conformations, along with the position of their contact zones, T4: explore the shape of the contact zones, T5: explore individual amino acids in the contact zones, their interaction and physico-chemical properties, T6: explore all possible conformations for multidocking, etc.
 
-In the following sections we present the three main goals, divided into two main stages of the project, in detail. These stages are:
+In the following sections we present two main stages of the project in detail. These stages are:
 \begin{itemize}
-\item Defining and systematizing the set of tasks and proposing novel visualization techniques enabling to fulfill these tasks. It will be followed by the design of an interactive visual analysis environment which integrates the selected proposed visualizations into one compact tool serving mainly for fast and intuitive exploration of the contact zones between proteins. The complexity of the proposed environment will be reduced by tracking the interaction history with individual views of the visual analysis system.
+\item Defining and systematizing the set of tasks and proposing novel visualization techniques enabling to fulfill these tasks. It will be followed by the design of an interactive visual analysis environment which integrates the selected proposed visualizations into one compact tool serving mainly for fast and intuitive exploration of the contact zones between proteins. %The complexity of the proposed environment will be reduced by tracking the interaction history with individual views of the visual analysis system.
 %For example, the proposed visualization will enable to explore and compare different solutions for protein-protein interactions. These will be based on 3D views (e.g., exploded views) as well as on semantically driven 2D abstractions.
-\item Proposing a formalism of visual analysis systems dealing with heterogeneous data and complex tasks. Such a formalism will categorize the individual visualizations according to the tasks they are able to support. Then it will enable to automatically suggest a set of the most suitable visualizations according to a given set of tasks and these visualizations will be combined into a visual analysis tool.
+\item Proposing a formalism of visual analysis systems dealing with multi-faceted computational biology data and complex tasks. Such a formalism will categorize the individual visualizations according to the tasks they are able to support. Then it will enable to automatically suggest a set of the most suitable visualizations according to a given set of tasks defined within the first stage and these visualizations will be combined into a visual analysis coordinated multiple-views framework.
 \end{itemize}
 
 The algorithms suggested on the basis of the below delineated research ideas will be validated by a prototypical implementation in the CAVER Analyst visualization framework. 
@@ -426,41 +442,47 @@ Their potential utility factor will be evaluated in the context of the proteomic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Stage 1: Comparative Visualization of Docking Ensembles}
-One of the biochemist's task in this stage is to select the most appropriate conformation for a particular pair of proteins.
+One of the biochemist's task is to select the most appropriate conformation for a particular pair of proteins.
 Typically a set of automated computational procedures is launched (see Section \ref{sec:StateOfTheArt}), resulting in an ensemble of potential contact zones.
 The other possible scenario for the use of the newly proposed visualization methods is to employ the existing information about known interactions between proteins (taken, e.g., from the PDBsum database).
 This information can be used as a reference when searching for the unknown contact between similar proteins (e.g., from the same family of proteins). 
 A promising strategy is to combine these two approaches and, if possible, use the database entries to find the most biochemically relevant solutions in the ensemble calculated with a computational tool, such as HADDOCK~\cite{haddock} or PyDOCK~\cite{pydock}.
 
+\setlength\intextsep{0pt}
 \begin{wrapfigure}{r}{0.7\textwidth}
+\vspace{-5mm}
   \begin{center}
 \includegraphics[width=0.7\textwidth]{pics/matrix2.png}
 \end{center}
-\caption{T1: matrix view showing an overview of all conformations, T2: lens view highlighting individual pairs of amino acids for the conformation in focus, T3: 3D exploded view enabling to show several solutions at once and to highlight the contact zones.}
+\vspace{-5mm}
+\caption{T1: matrix view showing an overview of all conformations. T2: lens view highlighting individual pairs of amino acids for the conformation in focus, T3: 3D exploded view enabling to show several conformations at once and to highlight the contact zones.}
 \label{fig:matrix}
 \end{wrapfigure}
 
 For this purpose, we plan to design several visual representations which will convey different types of information about the interacting proteins.
 On the highest level, the users should have an overview of all conformations which should be explored. 
-For this purpose, we suggest an abstracted interactive representation which enables the user to filter out conformations not fulfilling a given set of criteria (task T1).
-As an example, one such criterion could be the required pairs of interacting amino acids. 
+For this purpose, we suggest an abstracted interactive representation which enables the user to see the overall potential interaction pattern and to filter out conformations not fulfilling a given set of criteria (task T1).
+As an example, one such criterion could be that one pair of interacting amino acids is assumed to contribute to the interaction. 
+Such a hypothesis is often formed by the biologists in the early stage of the analytical workflow. 
 Such a representation will combine a \textbf{matrix-based visualization} with additional views highlighting the interacting amino acids in a selected conformation (task T2).
 Figure~\ref{fig:matrix} illustrates these ideas. 
+Rows and columns of the matrix correspond to all amino acids in the contact zones of the interacting proteins. 
+The cells are colored according to the frequency of occurrence of the given pair of amino acids in the conformations -- the more red color, the more often the pair in the set of all conformations is present.
+The column on the right side of the matrix will enable to explore one of the conformations (centered to be in focus) and its interacting pairs of amino acids (highlighted by the red line).
 %It consists of the matrix view and an interactive lens view where each rectangle corresponds to one conformation and for the conformation in the focus (center) the corresponding pairs of amino acids are connected.
 
-
-As the exploration of molecules in 3D space is very natural for the biochemists, we plan to focus on it as well.
-However, as already shown in Figure~\ref{fig:problem}, simple superposition is not an acceptable solution as this leads to severe clutter and does not scale well with the number of conformations.
-Therefore we propose to adapt the technique of \textbf{exploded views} (see Figure~\ref{fig:matrix}) which will be equipped with a preview window (task T3).
-In these previews, positioned close to the moved (exploded) protein, we will be able to present different information about the contact zones (tasks T4 and T5).
+The exploration of molecules in 3D space reveals structural properties to the biochemists.
+However, as already shown directly in Figure~\ref{fig:problem}, simple superposition is not an acceptable solution as this leads to severe clutter and does not scale well with the number of conformations.
 Contact zones are very important but easily affected by occlusion problems.
+Therefore we propose to adapt the technique of \textbf{exploded views} (see Figure~\ref{fig:matrix}) which will be equipped with a closeup view (task T3).
+In these closeups, positioned close to the translated (exploded) protein, we will be able to present additional information about the contact zones (tasks T4 and T5).
 
-Therefore we propose to present a trimmed \textbf{semi-flattened view} of the contact zone (positioned perpendicularly to the user; Fig.~\ref{fig:preview}a), the \textbf{neighborhood map} of individual amino acids in the contact zone (Fig.~\ref{fig:preview}b), and their mutual distances using a \textbf{height map} (Fig.~\ref{fig:preview}c).
-Here we suggest to embed a simplified contact zone representation into a comprehensive 3D context with the addition of supporting guiding lines.
+In the closeup view we propose to present a trimmed \textbf{semi-flattened view} of the contact zone (positioned perpendicularly to the user; Fig.~\ref{fig:preview}a), the \textbf{neighborhood map} of individual amino acids in the contact zone (Fig.~\ref{fig:preview}b), and the mutual distances between the interacting amino acids using a \textbf{height map} (Fig.~\ref{fig:preview}c).
+We propose to embed a simplified contact zone representation into a comprehensive 3D context with the addition of supporting guiding lines.
 For individual conformations, these maps can be also visualized as illustrated in Figure~\ref{fig:preview}d.
 
-
-Among the approaches used for solving occlusion problems we plan to use aggregated visual representations which will find the best representative of a set of aligned reference proteins which are very similar with respect to their spatial orientation (see the set of aligned reference proteins in green in Figure~\ref{fig:problem}).
+The occlusion problem is caused by the fact that often the computational tools output candidate interaction conformations that are very similar to each other and differ only by a small shift on the surface or a small rotation angle.
+To tackle this we plan to use aggregated visual representations which will find the best representative of a set of aligned reference proteins which are very similar with respect to their spatial orientation (see the set of aligned reference proteins in green in Figure~\ref{fig:problem}).
 The representative can be selected, e.g.,  as the median, average, or the most central from all the representations of the reference protein.
 For distributions of a single random variable, box plots are already widely used (and already extended to curves).
 However, we have to extend these concepts to complex geometric structures like molecular conformations, ensembles of molecular surfaces, and ensembles of secondary structures.
@@ -471,9 +493,12 @@ As the data has to be viewed with different levels of detail, we will introduce 
 This will enable the user to explore, e.g, a contact zone, on different levels of abstraction or detail.
 To give an example, the contact zone can be viewed just as an entry in the list of all possible contact zones, it can be visualized as a surface in 3D, a 3D surface with indicated interacting amino acids, 3D surface with indicated properties of these amino acids, a 2D-flattened polygon, etc.
 
+\setlength\intextsep{0pt}
 \begin{figure}[ht]
+\vspace{-5mm}
 \centering
 \includegraphics[width=0.9\textwidth]{pics/previewsmall.png}
+\vspace{-3mm}
 \caption{a) View on the contact zone (should be semi-flattened). b) Neighborhood map of individual amino acids in the contact zone. c) Height map showing the mutual distances between amino acids in the contact zone. d) For individual conformations, the preview can be positioned between the interacting proteins.}
 \label{fig:preview}
 \end{figure}
@@ -483,7 +508,9 @@ To give an example, the contact zone can be viewed just as an entry in the list 
 Initially, we will use available docking computations to generate ensembles of pair-wise dockings among all involved proteins forming the complex. 
 Some contact zone candidates will naturally conflict with each other by competing for the same surface area. 
 We will investigate visualization metaphors such as a pairwise multidocking matrix (see Figure~\ref{fig:multidock2}), where the analyst can choose a particular contact among two proteins (task T6). 
-Attention will be guided to contact zones with other proteins from the same complex, which are affected by \emph{occupying} the surface area by selected interaction. As the interacting proteins form complexes consisting of more than two proteins (results of multidocking), the corresponding visual representations will also face this increased clutter and occlusion challenge. It is an open question how to tackle it and whether or not exploded views are still a meaningful metaphor for conveying structural propoerties of the interaction.
+Instead of using one matrix as in the previous case, now for each protein interaction there is a separate matrix and they are concatenated together by the sequence of amino acids of one particular shared protein. 
+
+Attention will be guided to contact zones with other proteins from the same complex, which are affected by \emph{occupying} the surface area by selected interaction. As the interacting proteins form complexes consisting of more than two proteins (results of multidocking), the corresponding visual representations will also face this increased clutter and occlusion challenge. It is an open question how to tackle it and whether or not exploded views are still a meaningful metaphor for conveying structural properties of the interaction.
 
 Multidocking establishes a relationship between several molecules that form the molecular complex. In this sense, the relationship in the contact zone set is no longer binary, but $n>2$-nary, and an edge becomes a hyperedge in a hypergraph. 
 We envision a contact-zone hypergraph to depict all possible relationships in the molecular complex. 
@@ -502,11 +529,14 @@ This way, we will experiment with heterogeneous visualizations where the underly
 %\label{fig:multidocking}
 %\end{figure}
 
+\setlength\intextsep{0pt}
 \begin{wrapfigure}{r}{0.4\textwidth}
+\vspace{-5mm}
   \begin{center}
     \includegraphics[width=0.4\textwidth]{pics/multidock2.png}
   \end{center}
-  \caption{Interactive multidocking matrix enabling to show the overview of all conformations between proteins P1 -- P5.}
+\vspace{-5mm}
+  \caption{Interactive multidocking matrix enabling to show the overview of all conformations between proteins P1 -- P5. P1 interacts with P2 which also interacts with P3, etc.}
   \label{fig:multidock2}
 \end{wrapfigure}
 
@@ -633,9 +663,12 @@ Regular meetings will be held in Vienna, in Brno or half way between these two c
 \vspace{-5mm}
 The project timetable, illustrated in Figure \ref{timetable}, details the time spread of the individual stages along with the integration and evaluation steps.
  
+\setlength\intextsep{0pt}
 \begin{figure}[t]
+\vspace{-5mm}
 \centering
 \includegraphics[width=0.9\textwidth]{pics/timeline.png}
+\vspace{-3mm}
 \caption{The proposed timetable.}
 \label{timetable}
 \end{figure}
@@ -765,7 +798,15 @@ Yearly costs      & 102 106,3 & 90 279,53 & 90 279,53  & 282 665,36 & EUR \\
 \end{center}
 
 \section{Ethical Aspects}
-Proposed project includes several experiments as part of the scientific investigation, which will be performed in form of user studies. The studies might contain off the shelf non-invasive surveillance technologies such as eye-tracking or head-mounted displays for example, and will generally measure user response or effectiveness in completing particular tasks. There will be absolutely no scenarios, which would put the subjects into danger or risking their health. Such experiment will include only volunteering subjects, who will explicitly agree with the roles before being recruited to the experiments. Each study participant will receive a small financial compensation corresponding to the time and effort contributed. This is a common policy for the visualization research disciplines and human-computer interaction study, and experimental design will not attempt to cross the frame of standard practices. Each subject will be asked for an explicit paper agreement on study participation and data publication as part of the study without any ethics committee approval. Resulting data that will be included in the publications will be anonymized. All personal videos, images, questionnaires as well as their paper agreements will be stored on an encrypted digital storage device.
+Proposed project includes several experiments as part of the scientific investigation, which will be performed in form of user studies. 
+The studies might contain off the shelf non-invasive surveillance technologies such as eye-tracking or head-mounted displays for example, and will generally measure user response or effectiveness in completing particular tasks. 
+There will be absolutely no scenarios, which would put the subjects into danger or risking their health. 
+Such experiment will include only volunteering subjects, who will explicitly agree with the roles before being recruited to the experiments. 
+Each study participant will receive a small financial compensation corresponding to the time and effort contributed. 
+This is a common policy for the visualization research disciplines and human-computer interaction study, and experimental design will not attempt to cross the frame of standard practices. 
+Each subject will be asked for an explicit paper agreement on study participation and data publication as part of the study without any ethics committee approval. 
+Resulting data that will be included in the publications will be anonymized. 
+All personal videos, images, questionnaires as well as their paper agreements will be stored on an encrypted digital storage device.
 
 % Section: References ---------------------------------------------------------
 \newpage
