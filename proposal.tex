@@ -126,6 +126,7 @@ Vienna, Brno, March 2016
 % Section: Introduction -------------------------------------------------------
 \section{Introduction}
 \label{sec:Introduction}
+\vspace{-4mm}
 Understanding the biological functions of proteins is a basal knowledge that contributes to advances in medicine, pharmaceutics, but also agriculture and even energy sectors. 
 The ultimate goal of proteomic research is to describe functions of all protein complexes in cellular space and life time. 
 Protein interaction patterns are, however, very complex, and revealing these is a challenging and time-consuming scientific process. 
@@ -203,15 +204,7 @@ It is obvious that such a cluttered representation cannot be used for an intuiti
 %It enables one amino acid in the protein chain to be replaced by another one in order to change the protein properties.
 %In-silico identification and mutagenesis of one crucial hot spot of each of the proposed docking models will provide a major target for the experimental mutagenesis approach. 
 %This can significantly reduce the number of the real protein mutants required for the determination of the real contact zone.
-\setlength\intextsep{0pt}
-\begin{wrapfigure}{l}{0.5\textwidth}
-  \begin{center}
-  \includegraphics[width=0.5\textwidth,height=0.48\textwidth]{pics/telomer.png}
-	\end{center}
-	\vspace{-20pt}
-  \caption{Architecture and composition of SMC complexes (taken from Pale\v{c}ek and Gruber~\cite{Palecek2015}). These complexes will serve in the evaluation of the usability of our proposed visualizations and visual analysis tools.}
-  \label{fig:telomere}
-\end{wrapfigure}
+
 
 With respect to the docking problem, the current solutions focus mainly on searching for possible interactions between two proteins.
 However, proteins can also form more complicated \textit{complexes of proteins} where several protein structures interact with each other.
@@ -224,6 +217,16 @@ In this case existing visualization tools do not even offer a minimally sufficie
 %It is not obvious how existing visualization technology can be adapted to the delineated problem of protein-protein interactions.
 %A substantial research effort is expected in order to investigate novel visualization techniques that could aid the analytic workflow (see Figure \ref{fig:workflow}). 
 
+\setlength\intextsep{0pt}
+\begin{wrapfigure}{l}{0.5\textwidth}
+  \begin{center}
+  \includegraphics[width=0.5\textwidth,height=0.48\textwidth]{pics/telomer.png}
+	\end{center}
+	\vspace{-20pt}
+  \caption{Architecture and composition of SMC complexes (taken from Pale\v{c}ek and Gruber~\cite{Palecek2015}). These complexes will serve in the evaluation of the usability of our proposed visualizations and visual analysis tools.}
+  \label{fig:telomere}
+\end{wrapfigure}
+
 As a part of the research project, the novel visualization technology will be tested with the ongoing biological research at the Department of Functional Genomics and Proteomics (DFGP), located at the Faculty of Science at the Masaryk University in Brno. 
 The focus of interest of researchers at DFGP is on SMC (structure maintenance of chromosome), telomere-associated, and other chromatin complexes. 
 The SMC complexes are key players in chromatin organization and dynamics (e.g., the condensin complex ensures a proper condensation of chromosomes -- see Figure~\ref{fig:telomere} taken from Pale\v{c}ek and Gruber~\cite{Palecek2015}) and are the main focus of the Pale\v{c}ek's group.
@@ -232,17 +235,16 @@ Their goal is to uncover the way how the subunits of these complexes interact wi
 Therefore, a visual representation of such information is highly beneficial because it helps to reveal the spatial relationships between the subunits in an intuitive way.
 
 
+
 \section{Objectives}
+\vspace{-4mm}
 The objectives of the project follow its two stages which are depicted in Figure~\ref{fig:system}.
 The first objective is to design novel visualization metaphors supporting particular tasks and to build a system for visual analysis combining the proposed visualization methods into an intuitive and interactive environment.
 The second objective is related with the fact that visual analytics frameworks are currently being developed in many fields of sciences to support the analytical workkflows of specialists. 
-However, they lack a systematic formalization of the design choices.
-It is the case of our underlying domain problem as well. 
-We want to use this use case for advancing conceptual level of visual analytics by proposing a formalization of the theory for visual analytics frameworks design given a specific set of data and analytical goals.
 
 \setlength\intextsep{0pt}
 \begin{wrapfigure}{r}{0.5\textwidth}
-\vspace{-5mm}
+\vspace{-8mm}
 \begin{center}
 \includegraphics[width=0.5\textwidth,height=0.7\textwidth]{pics/systemsmall.png}
 \end{center}
@@ -250,6 +252,10 @@ We want to use this use case for advancing conceptual level of visual analytics 
 \caption{Overview of the project outline. In Stage 1 we will focus on designing specific visualizations for given tasks and building visual analysis systems consisting of these visualizations. Stage 2 proposes a formalized model of the visual analysis systems which will focus on specific tasks Ti.}
 \label{fig:system}
 \end{wrapfigure}
+However, they lack a systematic formalization of the design choices.
+It is the case of our underlying domain problem as well. 
+We want to use this use case for advancing conceptual level of visual analytics by proposing a formalization of the theory for visual analytics frameworks design given a specific set of data and analytical goals.
+
 %The potential impact of the outcome of this project for the scientific discipline of structural biology is substantial.
 %To enable efficient visual comparison of complex protein structures, we will develop a semantically-driven flattening approaches so that important aspects of an entire surface of particular 3D structure will be described in one image. Furthermore, we will link or directly integrate meaningful information visualization techniques such as matrices, ranking representations, or hypergraphics with spatial visualization, resulting into comprehensive heterogeneous visualizations able to communicate a large picture of multiple aspects of the underlying data. We will develop new visual guidance techniques based on controlling movement of molecular dynamics simulations driven by domain semantics, propose new suggestive visualizations that will help to propose the most appropriate candidate amino acids for mutagenesis, and multidocking will be guided so that the analyst is not lost in the complexity and clearly understands which multidocking conformations are physically plausible.
 
@@ -263,12 +269,14 @@ We want to use this use case for advancing conceptual level of visual analytics 
 % Section: State of the Art ---------------------------------------------------
 \section{State of the Art}
 \label{sec:StateOfTheArt}
+\vspace{-4mm}
 The previous work related to the scope of our project consists of several parts. 
 First, we briefly describe the basic principles of existing solutions for the computational analysis of protein structures, including protein-protein interactions. 
 Then we review the existing approaches for the visualization of protein surfaces as the contact zones between proteins can be visualized as surfaces in 3D.
 This is followed by surveying methods for an interactive visual analysis and visual guidance through large molecular systems, which combine several representations in order to get a comprehensive view on the whole system. 
 
 \subsection{Computational Analysis of Proteins}
+\vspace{-4mm}
 The spatial conformation of a protein greatly influences its reactivity and properties, thus many publications are related to the geometrical analysis of protein structure. 
 Proteins can react with other structures, such as small molecules or other proteins, via chemical reactions or interactions occurring deeply inside the protein or on the protein surface.
 In the first case, the protein inner void space gives the opportunity for small molecules to enter the protein and perform a chemical reaction. 
@@ -284,10 +292,6 @@ The currently existing search strategies for protein-protein docking can be divi
 The first category consists of methods using an exhaustive global search which requires enormous computational resources.
 The other categories use local shape feature matching, randomized search, or post-docking approaches employing advanced scoring functions or consider protein flexibility. Details about these approaches as well as a list of existing solutions can be found in the survey of Huang \cite{huang}.
 
-Existing visual representations of computed structures (pathways or contact zones) mostly deal with their 3D spatial arrangement. 
-However, such a 3D visualization is rather limited, mainly with respect to depicting many properties (physico-chemical, geometric) of the amino acids forming the pathways or contact zones. In such cases an abstracted representation is more appropriate. 
-An example of this was presented by Heinrich et al.~\cite{Heinrich2014} where the authors use parallel coordinates to convey many attributes of amino acids (see Figure~\ref{fig:parallel}). 
-
 \setlength\intextsep{0pt}
 \begin{wrapfigure}{l}{0.49\textwidth}
 \vspace{-5mm}
@@ -298,10 +302,13 @@ An example of this was presented by Heinrich et al.~\cite{Heinrich2014} where th
   \caption{Parallel coordinates showing different amino acid attributes. Each amino acid is represented as a polyline. Image taken from Krone et al.~\cite{Krone2014}.}
   \label{fig:parallel}
 \end{wrapfigure}
-
+Existing visual representations of computed structures (pathways or contact zones) mostly deal with their 3D spatial arrangement. 
+However, such a 3D visualization is rather limited, mainly with respect to depicting many properties (physico-chemical, geometric) of the amino acids forming the pathways or contact zones. In such cases an abstracted representation is more appropriate. 
+An example of this was presented by Heinrich et al.~\cite{Heinrich2014} where the authors use parallel coordinates to convey many attributes of amino acids (see Figure~\ref{fig:parallel}). 
 Furthermore, when dealing with several proteins at once, the visual comparison of results in 3D is impossible to reach in a clear and comprehensible way.  
 
 \subsection{Visualization of a Protein Surface}
+\vspace{-4mm}
 The protein surface plays a crucial role in interactions with the outer environment, including other molecules. 
 In case of protein-protein interactions, the most important parts of the proteins are the mutual contact zones. 
 These zones can be represented by one of the traditional models for visualization of their amino acids (e.g., space-filling model). 
@@ -334,9 +341,9 @@ Therefore they propose an algorithm for the interactive computation of a so call
 	\end{center}
 \vspace{-5mm}
   \caption{Visual representations of the contact zones proposed by Lee and Varshney. a) Translucent surfaces, b) Intermolecular negative volume between molecules, c) Intermolecular volume only. Image taken from Lee and Varshney~\cite{Lee2006}}.
+\vspace{-5mm}
   \label{fig:varshney}
 \end{wrapfigure}
-
 The context part can be represented using some level of abstraction. Cipriano and Gleicher \cite{cipriano} presented a visualization technique which provides an abstracted view of the shape of molecules.
 Their approach suppresses small details to facilitate rapid comprehension but marks the location of significant but removed features so they remain perceivable.
 
@@ -355,6 +362,7 @@ UCSF Chimera \cite{chimera} is an application for the interactive visualization 
 %\end{wrapfigure}
 
 \subsection{Interactive Visual Analysis and Visual Guidance}
+\vspace{-4mm}
 Here we mention several existing methods for an effective visual guidance through various tasks related to interactions between proteins (e.g., comparison or multidocking). 
 Lindow et al.~\cite{Lindow2013} introduced a tool for the interactive exploration of the dynamics of cavities and their volumes.
 Krone et al.~\cite{Krone2014} presented a visual analysis application for protein simulations and inner cavities.
@@ -369,10 +377,12 @@ In 2013, Parulek et al.~\cite{parulek13visualanalysis} published an approach for
 \includegraphics[width=0.7\textwidth]{pics/parulek2.png}
 \vspace{-5mm}
 \caption{Combination of a 3D view onto the structure containing a cavity with scatterplots \cite{parulek2012implicit}.}
+\vspace{-3mm}
 \label{parulek}
 \end{figure}
 
 \subsection{Our Own Previous Work and Competences}
+\vspace{-4mm}
 To reach the goals of this project, which focuses on the expressive visualizations of interactions between proteins and their comparison, their integration into the visual analysis tool, and the formalizing of visual analysis systems, we need to involve researchers with complementary expertise.
 The project requires specialists in computational analysis and visualization, visual analysis, and functional proteomics.
 Therefore our team has the following structure.
@@ -422,6 +432,7 @@ The DCGD and ICGA groups were also successful in obtaining a mutual mobility pro
 % Section: Technical Description ---------------------------------------------
 \section{Technical Description}
 \label{sec:TechnicalDescription}
+\vspace{-4mm}
 The project is driven by the needs of the functional proteomics research, which to date does not take advantage of effective analytical workflows based on visualization.
 It is unclear how to extend existing molecular visualization approaches reviewed in the previous section that would lead to a satisfactory solution of the yet untackled protein-protein interaction problem.
 In our proposed solutions, we will start out from relevant real-world problems the researchers are facing when exploring and comparing different conformations of interacting proteins.
@@ -442,22 +453,12 @@ Their potential utility factor will be evaluated in the context of the proteomic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Stage 1: Comparative Visualization of Docking Ensembles}
+\vspace{-4mm}
 One of the biochemist's task is to select the most appropriate conformation for a particular pair of proteins.
 Typically a set of automated computational procedures is launched (see Section \ref{sec:StateOfTheArt}), resulting in an ensemble of potential contact zones.
-The other possible scenario for the use of the newly proposed visualization methods is to employ the existing information about known interactions between proteins (taken, e.g., from the PDBsum database).
+%The other possible scenario for the use of the newly proposed visualization methods is to employ the existing information about known interactions between proteins (taken, e.g., from the PDBsum database).
 This information can be used as a reference when searching for the unknown contact between similar proteins (e.g., from the same family of proteins). 
 A promising strategy is to combine these two approaches and, if possible, use the database entries to find the most biochemically relevant solutions in the ensemble calculated with a computational tool, such as HADDOCK~\cite{haddock} or PyDOCK~\cite{pydock}.
-
-\setlength\intextsep{0pt}
-\begin{wrapfigure}{r}{0.7\textwidth}
-\vspace{-5mm}
-  \begin{center}
-\includegraphics[width=0.7\textwidth]{pics/matrix2.png}
-\end{center}
-\vspace{-5mm}
-\caption{T1: matrix view showing an overview of all conformations. T2: lens view highlighting individual pairs of amino acids for the conformation in focus, T3: 3D exploded view enabling to show several conformations at once and to highlight the contact zones.}
-\label{fig:matrix}
-\end{wrapfigure}
 
 For this purpose, we plan to design several visual representations which will convey different types of information about the interacting proteins.
 On the highest level, the users should have an overview of all conformations which should be explored. 
@@ -470,6 +471,17 @@ Rows and columns of the matrix correspond to all amino acids in the contact zone
 The cells are colored according to the frequency of occurrence of the given pair of amino acids in the conformations -- the more red color, the more often the pair in the set of all conformations is present.
 The column on the right side of the matrix will enable to explore one of the conformations (centered to be in focus) and its interacting pairs of amino acids (highlighted by the red line).
 %It consists of the matrix view and an interactive lens view where each rectangle corresponds to one conformation and for the conformation in the focus (center) the corresponding pairs of amino acids are connected.
+
+\setlength\intextsep{0pt}
+\begin{wrapfigure}{r}{0.7\textwidth}
+\vspace{-3mm}
+  \begin{center}
+\includegraphics[width=0.7\textwidth]{pics/matrix2.png}
+\end{center}
+\vspace{-5mm}
+\caption{T1: matrix view showing an overview of all conformations. T2: lens view highlighting individual pairs of amino acids for the conformation in focus, T3: 3D exploded view enabling to show several conformations at once and to highlight the contact zones.}
+\label{fig:matrix}
+\end{wrapfigure}
 
 The exploration of molecules in 3D space reveals structural properties to the biochemists.
 However, as already shown directly in Figure~\ref{fig:problem}, simple superposition is not an acceptable solution as this leads to severe clutter and does not scale well with the number of conformations.
@@ -493,9 +505,9 @@ As the data has to be viewed with different levels of detail, we will introduce 
 This will enable the user to explore, e.g, a contact zone, on different levels of abstraction or detail.
 To give an example, the contact zone can be viewed just as an entry in the list of all possible contact zones, it can be visualized as a surface in 3D, a 3D surface with indicated interacting amino acids, 3D surface with indicated properties of these amino acids, a 2D-flattened polygon, etc.
 
-\setlength\intextsep{0pt}
+%\setlength\intextsep{0pt}
 \begin{figure}[ht]
-\vspace{-5mm}
+%\vspace{-5mm}
 \centering
 \includegraphics[width=0.9\textwidth]{pics/previewsmall.png}
 \vspace{-3mm}
@@ -504,7 +516,7 @@ To give an example, the contact zone can be viewed just as an entry in the list 
 \end{figure}
 
 \subsubsection{Visualizing Multidocking Search-Space}
-\vspace{-4mm}
+\vspace{-3mm}
 Initially, we will use available docking computations to generate ensembles of pair-wise dockings among all involved proteins forming the complex. 
 Some contact zone candidates will naturally conflict with each other by competing for the same surface area. 
 We will investigate visualization metaphors such as a pairwise multidocking matrix (see Figure~\ref{fig:multidock2}), where the analyst can choose a particular contact among two proteins (task T6). 
@@ -547,7 +559,7 @@ After a particular selection of a preferred multidocking scenario, MD simulation
 Should the tested complex scenario turn out to be unstable, this information is then propagated back into the contact-zone hypergraph representation, so that other constellations will be prioritized in ranking and consequent visual analysis.
 
 \subsubsection{Comparison of Conformations from Different Computational Tools}
-\vspace{-4mm}
+\vspace{-3mm}
 If the source of the input data is made-up by the results of various computational tools, it is not advisable to simply combine them into one common input.
 The main reason is that these tools produce slightly different output parameters (e.g., each tool computes its own scores). 
 Therefore, the proposed visualizations should need to be extended. 
@@ -559,7 +571,7 @@ Such operations could be: take the worst/best solution, just highlight high-vari
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Visual Analysis of Interactions}
-\vspace{-4mm}
+\vspace{-3mm}
 Subsequently, we will propose several combinations of the designed visualization techniques into visual analysis tools aiming to provide the users with an intuitive and interactive environment supporting their tasks.
 However, the input data as well as the tasks can be highly complex which will in consequence lead to too complex visual analysis tools containing too many linked views.
 As a solution to this problem we will propose a semi-automatic simplification of such tools through adaptation.
@@ -574,7 +586,10 @@ All visualizations used in the tool will be interlinked and by using advanced br
 
 
 \subsection{Stage 2: Formalization of Visual Analysis Systems}
+\vspace{-4mm}
 If we look back in the visual analytics (VA) research in the past decade, there have been many VA frameworks proposed, which aid the completion of a particular visualization task. Many of them appear to have a similar high-level pattern, the mostly utilized pattern is the juxtaposition of different views which reveal one or few aspects of a multi-dimensional phenomenon. A VA framework typically provides views for each aspect that is necessary to understand to accomplish a given analytical task. These aspects are linked together so that their mutual relationships can be understood as well. These are the famous multiple coordinated views.
+In such a visual analysis framework, sharing of variables across views is important.
+An interesting aspect here is the placement of the views so that the most related information is close on the display. 
 
 Our task analysis, of which preliminary results are listed in the previous section, offers several scenarios for which a tailor-made VA framework can be designed. Until now, this has been done by visualization experts themselves. However, in case we have a clear structure about the aspects which describe a given phenomenon and at the same time we have clearly defined tasks, we hypothesize that it should be possible to design the VA framework algorithmically. In the second stage of the proposed research we will focus on developing a formalism for a VA design and contribute to the theoretical foundations to this emerging subfield of visualization. 
 
@@ -593,8 +608,11 @@ In order to propose the formal system based on different user tasks, the definit
 Instead of defining the VA design explicitly, the specification will be of a declarative nature so that even a domain specialist would be able to implicitly author the VA framework.
 For specification we will create a domain-specific language for the definition of these tasks which will serve as a meta-language for the automatic selection of relevant visualizations and their integration into the overall visual analysis system. The syntax of the language will combine traditional commands of programming languages with naming conventions of the given domain. The functions derived from a set of basic as well as complex tasks will form the basis of the semantic meaning of the language. Here we will be inspired by a feature definition language proposed by Doleisch et al.~\cite{Doleisch} who presented a framework for flexible and interactive specification of high-dimensional and complex features in simulation data. It allows the definition of one or several features by brushing multiple dimensions and highlighting the selected features in all linked views.
 In our case, such features of the input data are, e.g., two interacting proteins, a set of interacting proteins (larger than two), contact zones, interacting amino acids, temporal changes of the proteins, etc. 
+As the tasks will change, because of progressing in the analytical workflow, we will also investigate how to smoothly adapt the interface so that the change between the layout for the previous and current task is continuous instead of building entirely new graphical user interface.
 
 A naive approach to build a VA workflow would be to include all possible visualizations from the predefined set to show all possible kinds of relationships. If the display estate is huge, such approach is possible to implement. However, this would result in too much of visual information to be effectively consumable during the analysis workflow. Humans have only a limited field of view, they could be easily overwhelmed, so the display space needs to be utilized that only most crucial visualization views are included in the VA framework design. The VA design would then be constrained from both sides, the necessity to show particular visual information and the availability of visual estate. We will investigate whether force-based approaches would be suitable for resolving the constraints. At the first glance procedural modeling of architecture might sound like not very relevant for automated design of VA frameworks. Especially the recent works on interior design or scaffold structure deal with a similar problem. On one hand there is the desired functionality, on the other hand there are technical norms and space limitations that constraint the design choice. While it is at this moment rather open what is a feasible solution for automated VA design, we will seek for inspiration in related visual computing domains to tackle such high-risk high-gain research objective.
+
+
 
 %Moreover, when dealing with large-input, heterogeneous data and complex tasks, the design process usually covers only a small subset of possible tasks.  
 %If the input data is highly structured, such as in our case of protein-protein interactions, we can propose visualizations focusing on different aspects of the input dataset.
@@ -602,9 +620,6 @@ A naive approach to build a VA workflow would be to include all possible visuali
 %Based on this information, we will propose a formalized model which will categorize the suggested visualizations into clusters according to these characteristics and their basic properties (examples in Figure~\ref{fig:system}, Stage 3).
 %Then for a given task, we will automatically suggest the combination of clusters which will form the resulting visual analysis system presented to the user. 
 %In consequence, different tasks can lead to different visual analysis systems.
-
-
-
 
 
 \subsection{Integration of Visualization Technologies}
@@ -647,13 +662,11 @@ The administration of the project will be managed by Barbora Kozl\'{i}kov\'{a} a
 Dr. Kozl\'{i}kov\'{a} and Prof. Viola will be responsible for the scientific and financial reports, which will be prepared jointly by both partners and their financial administrators. 
 
 The coordination of both partners will be carried out by frequent meetings. 
-Because of the geographical distribution and interdisciplinary nature of the project, special coordination and communication strategies are necessary. 
-This includes a database for storing joint literature and publications and joint repositories for easy software deployment. 
+Because of the geographical distribution and interdisciplinarity of the project, special coordination and communication strategies are necessary. 
+This includes a database for storing joint literature and publications and repositories for easy software deployment. 
 The shared database and repositories will be maintained using the graphical workstation required for this project. 
 Moreover, we will organize regular project meetings (four meetings of the whole project team per year) and yearly workshops, where our latest results will be presented to colleagues and students at the corresponding departments. 
-We will also establish a collaboration on an institutional level, where we will arrange several reciprocal internships of young researchers (via mobility projects or the ERASMUS+ study program). 
- 
-The initial project meeting will be organized in January 2017 in Brno, the project end meeting will be held in Vienna. 
+We will also establish a collaboration on an institutional level, where we will arrange several reciprocal internships of young researchers (via mobility projects or the ERASMUS+ study program). The initial project meeting will be organized in January 2017 in Brno, the project end meeting will be held in Vienna. 
 Regular meetings will be held in Vienna, in Brno or half way between these two cities, in Mikulov.
 
 
@@ -662,13 +675,12 @@ Regular meetings will be held in Vienna, in Brno or half way between these two c
 \label{sec:Timetable}
 \vspace{-5mm}
 The project timetable, illustrated in Figure \ref{timetable}, details the time spread of the individual stages along with the integration and evaluation steps.
+\vspace{3mm}
  
-\setlength\intextsep{0pt}
-\begin{figure}[t]
-\vspace{-5mm}
+%\setlength\intextsep{0pt}
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{pics/timeline.png}
-\vspace{-3mm}
+\includegraphics[width=0.8\textwidth]{pics/timeline.png}
 \caption{The proposed timetable.}
 \label{timetable}
 \end{figure}
@@ -754,35 +766,31 @@ Additionally to this, Dr. Pale\v{c}ek will be 20\% engaged in the project.
 %Based on our previous experience with similar research projects, we estimate that the time needed to achieve the goals of this project will require three years for the junior researcher position.
 For the junior researcher at ICGA we plan to recruit a suitable candidate from new graduates of ICGA or graduates from other universities, who will meet the requirements.
 This researcher will be supervised by Prof. Dr. Ivan Viola.\\
-Total personnel costs AT = 109 980,00 EUR\\
-Total personnel costs CZ = 87 651,17 EUR\\
+Total personnel costs AT = 109 980,00 EUR; total personnel costs CZ = 87 651,17 EUR\\
 \textbf{Total personnel costs (including insurance):}   \textbf{197 631,17} EUR
-
+\vspace{-5mm}
 \paragraph{Equipment}
 To efficiently conduct our research project we request one high-performance graphics workstation, software + updates (mainly graphics cards).\\
 Workstation = 11 826,77 EUR 
- 
+\vspace{-5mm} 
 \paragraph{Materials}
 On the Czech side, the material costs will be used for high-performance graphics cards. As we plan to produce high-quality color posters to present our project at conferences and important local events, we involve these costs into the budget as well. Here we include also costs for organizing yearly project workshops with the participation of the involved researchers and participation of external experts.\\
-Posters and 3D prints and workshops AT = 1 500,00 EUR\\
-Graphics cards, posters, 3D prints, workshops CZ = 5 991,35 EUR\\
+Posters and 3D prints and workshops AT = 1 500,00 EUR; graphics cards, posters, 3D prints, workshops CZ = 5 991,35 EUR\\
 \textbf{Total material costs:}   \textbf{7 491,34} EUR
-
+\vspace{-5mm}
 \paragraph{Travel}
-The results of the project will be presented at international conferences, namely IEEE VIS, EG EuroVis, IEEE PacificVis. We expect to publish about 5 conference papers per year, resulting in a total of 15 active participations of project members, 9 of which we expect to be in the US. The required traveling costs will also cover the expenses for meetings of project partners and for research stays of PhD students participating on the project at the partner university (approximately 6 months for each student in total within the project duration).\\
-Travel costs AT = 9 000,00 EUR\\
-Travel costs CZ = 13 200,00 EUR\\
+The results of the project will be presented at international conferences, namely IEEE VIS, EG EuroVis, IEEE PacificVis. We expect to publish about 5 papers per year, (2 journal and 3 top conference papers), resulting in a total of 9 active participations of project members, 3 of which we expect to be in the US. For this we require 11,000 EUR in total (1,000 EUR per conference in Europe, 1,500 EUR per conference in the US).
+The required traveling costs will also cover the expenses for meetings of project partners (3,000 EUR in total) and for research stays of PhD students participating on the project at the partner university (approximately 6 months for each student in total within the project duration). For these stays we plan 6,000 EUR in the Czech side and 2,200 EUR for the Austrian partner -- this is planned with respect to higher living expenses in Vienna. 
+Travel costs AT = 9 000,00 EUR; travel costs CZ = 13 200,00 EUR\\
 \textbf{Total travel costs:}   \textbf{22 200,00} EUR
-
+\vspace{-5mm}
 \paragraph{Other Costs}
 Other costs consist of conference fees (in CZ they fall into this category) and open-access publication fees. We include also overheads for the project administration, allowed by GA\v{C}R (20\% of the CZ budget) and FWF (5\% of the AT budget).\\
-Publications AT = 4 500,00 EUR\\
-Conference fees CZ = 4 438,03 EUR\\
-Overheads AT = 6 840,34 EUR\\
-Overheads CZ = 27 737,71 EUR\\
+Publications AT = 4 500,00 EUR; conference fees CZ = 4 438,03 EUR; overheads AT = 6 840,34 EUR; overheads CZ = 27 737,71 EUR\\
 \textbf{Total other costs:}   \textbf{43 516,08} EUR
 
 \paragraph{Summary of Requested Funding}
+\vspace{-4mm}
 \begin{center}
 \begin{tabular}{lrrrrl}
                         & $1^{st}$ year  &  $2^{nd}$ year & $3^{rd}$ year & Total & \\
@@ -798,6 +806,7 @@ Yearly costs      & 102 106,3 & 90 279,53 & 90 279,53  & 282 665,36 & EUR \\
 \end{center}
 
 \section{Ethical Aspects}
+\vspace{-4mm}
 Proposed project includes several experiments as part of the scientific investigation, which will be performed in form of user studies. 
 The studies might contain off the shelf non-invasive surveillance technologies such as eye-tracking or head-mounted displays for example, and will generally measure user response or effectiveness in completing particular tasks. 
 There will be absolutely no scenarios, which would put the subjects into danger or risking their health. 
