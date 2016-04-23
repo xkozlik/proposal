@@ -66,7 +66,7 @@ Assist. Prof. RNDr. Barbora Kozl\'{i}kov\'{a}, Ph.D., Assist. Prof.\ Dipl.-Ing.\
 Assoc. Prof. Jan Pale\v{c}ek, Dr. rer. nat.%, RNDr. Jan By\v{s}ka, \\ 
 %RNDr. Adam Jur\v{c}\'{i}k, TODO\\
 \vfill
-Resubmission of the proposal No. I 2383-N33 submitted in 2016\\
+Resubmission of the proposal No. I 2383-N33 submitted in 2015\\
 Vienna, Brno, March 2016
 %\vspace{1cm}
 
@@ -588,7 +588,7 @@ All visualizations used in the tool will be interlinked and by using advanced br
 
 \subsection{Stage 2: Formalization of Visual Analysis Systems}
 \vspace{-4mm}
-If we look back in the visual analytics (VA) research in the past decade, there have been many VA frameworks proposed, which aid the completion of a particular visualization task. Many of them appear to have a similar high-level pattern, the mostly utilized pattern is the juxtaposition of different views which reveal one or few aspects of a multi-dimensional phenomenon. A VA framework typically provides views for each aspect that is necessary to understand to accomplish a given analytical task. These aspects are linked together so that their mutual relationships can be understood as well. These are the famous multiple coordinated views.
+If we look back in the visual analytics (VA) research in the past decade, there have been many VA frameworks proposed, which aid the completion of a particular visualization task. Many of them appear to have a similar high-level pattern, the mostly utilized pattern is the juxtaposition of different views which reveal one or few aspects of a multi-dimensional phenomenon. A VA framework typically provides multiple coordinated views, typically one for each aspect that is necessary to understand to accomplish a given analytical task. These aspects are linked together so that their mutual relationships can be understood as well. 
 In such a visual analysis framework, sharing of variables across views is important.
 An interesting aspect here is the placement of the views so that the most related information is close on the display. 
 
@@ -611,7 +611,10 @@ For specification we will create a domain-specific language for the definition o
 In our case, such features of the input data are, e.g., two interacting proteins, a set of interacting proteins (larger than two), contact zones, interacting amino acids, temporal changes of the proteins, etc. 
 As the tasks will change, because of progressing in the analytical workflow, we will also investigate how to smoothly adapt the interface so that the change between the layout for the previous and current task is continuous instead of building entirely new graphical user interface.
 
-A naive approach to build a VA workflow would be to include all possible visualizations from the predefined set to show all possible kinds of relationships. If the display estate is huge, such approach is possible to implement. However, this would result in too much of visual information to be effectively consumable during the analysis workflow. Humans have only a limited field of view, they could be easily overwhelmed, so the display space needs to be utilized that only most crucial visualization views are included in the VA framework design. The VA design would then be constrained from both sides, the necessity to show particular visual information and the availability of visual estate. We will investigate whether force-based approaches would be suitable for resolving the constraints. At the first glance procedural modeling of architecture might sound like not very relevant for automated design of VA frameworks. Especially the recent works on interior design or scaffold structure deal with a similar problem. On one hand there is the desired functionality, on the other hand there are technical norms and space limitations that constraint the design choice. While it is at this moment rather open what is a feasible solution for automated VA design, we will seek for inspiration in related visual computing domains to tackle such high-risk high-gain research objective.
+
+The design of the VA framework has to take into account the importance of the vicinity of views next to each other as well as their order according to which variables are related to each other in a particular view and which will be related to each other via brushing across these views. For linked views a total overlap of information is undesired but the same stands for no overlap. But the overlap should be minimal, just to understand the relationships across views. 
+
+A naive approach to build a VA workflow would be to include all possible visualizations from the predefined set to show all possible kinds of relationships. If the display estate is huge and human visual angle is very wide, such approach is possible to implement. However, this would result in too much of visual information to be effectively consumable during the analysis workflow. Humans have only a limited field of view, they could be easily overwhelmed, so the display space needs to be utilized that only most crucial visualization views are included in the VA framework design. The VA design would then be constrained from both sides, the necessity to show particular visual information and the availability of visual estate. We will investigate whether force-based approaches would be suitable for resolving the constraints. At the first glance procedural modeling of architecture might sound like not very relevant for automated design of VA frameworks. Especially the recent works on interior design or scaffold structure~\cite{Viola_Ivan_2013_RMA,Merrell2011} deal with a similar problem. On one hand there is the desired functionality, on the other hand there are technical norms and space limitations that constrain the design choice. While it is at this moment rather open what is a feasible solution for automated VA design, we will seek for inspiration in related visual computing domains to tackle such high-risk high-gain research objective.
 
 
 
@@ -636,7 +639,7 @@ In relation to the validation part of the proposed research described below, whe
 \subsection{Usability Testing in Proteomics Research}
 \vspace{-4mm}
 \label{sec:smc}
-The goal of this research focus is to apply and test the above visualization technologies on real SMC complexes. 
+The goal of this research focus is to apply and test the above visualization technologies on structure maintenance of chromosome complexes. 
 The SMC complexes have a unique architecture suited for their role as chromatin organizers~\cite{Palecek2015}. 
 The SMC subunits form rings (see Figure~\ref{fig:telomere}) which can be temporarily opened to load or release chromatin fibre~\cite{Haering2016}. 
 Specific bindings of non-SMC (NSE) subunits at one end of the SMC ring regulates its closure. 
@@ -696,9 +699,7 @@ All proposed methods will be integrated into one software framework, CAVER Analy
 
 \subsection{Dissemination Plan}
 \vspace{-4mm}
-This basic research project on visualization will be published first in primary scientific venues for visualization research. These include IEEE TVCG (IEEE VIS Conference) and EG CGF (EG EuroVis Conference). Focused events on visualization of biological data, such as IEEE BioVis (in particular in connection with BMC Bioinformatics) or EG VCBM will be also considered for publication of the project's results. We expect approximately 8-10 visualization papers published in primary venues on visualization.
-
-The integration into a system for visualization and analysis of protein-protein interactions will be published in a bioinformatics journal. Currently we have BMC Bioinformatics in mind. In case the new workflow enables a major scientific breakthrough, we will prepare a Nature Methods paper. 
+This basic research project on visualization will be published first in primary scientific venues for visualization research. These include IEEE TVCG (IEEE VIS Conference) and EG CGF (EG EuroVis Conference). Focused events on visualization of biological data, such as IEEE BioVis (in particular in connection with BMC Bioinformatics) or EG VCBM will be also considered for publication of the project's results. We expect approximately more than 10 visualization papers published in primary venues on visualization. The integration into a system for visualization and analysis of protein-protein interactions will be published in a bioinformatics journal. Currently we have BMC Bioinformatics in mind. In case the new workflow enables a major scientific breakthrough, we will prepare a Nature Methods paper. 
 
 %The project web page will be established at the beginning of the project and will contain the basic information about the aim of the project, the research team and the core activities. The content will be systematically updated according to the project progress. The link to the project web page will be also included into the existing group web pages on both institutions.
 
@@ -734,11 +735,11 @@ In addition, the Pale\v{c}ek lab collaborates with NMR and cryoEM (CEITEC) and c
 \vspace{-4mm}
 \textbf{Dr. Barbora Kozl\'{i}kov\'{a}}, the project coordinator, is an assistant professor at DCGD, Faculty of Informatics, Masaryk University in Brno. In 2011 she has received her PhD from the same university. She focuses mainly on the interdisciplinary CAVER project which integrates computational geometry and visualization. She is the co-leader of the Human-Computer Interaction Laboratory (www.decibel.fi.muni.cz). 
 
-\textbf{Prof. Dr. Ivan Viola} is an assistant professor at ICGA, Vienna University of Technology (VUT) and adjunct professor at the University of Bergen, Norway. In 2005 he has received his PhD from VUT. In 2011, he received an WWTF Vienna Research Groups award which provides basic financing of his group for eight years. His research interests include computer graphics, visualization, with particular focus on illustrative visualization. He is co-heading the visualization group at ICGA. The group performs basic and applied research projects in the area of scientific visualization. 
+\textbf{Prof. Dr. Ivan Viola} is an assistant professor at ICGA, TU Wien. In 2005 he has received his PhD from TU Wien. In 2011, he received an WWTF Vienna Research Groups award which provides basic financing of his group for eight years. His research interests include computer graphics, visualization, with particular focus on illustrative visualization. He is co-heading the visualization group at ICGA. The group performs basic and applied research projects in the area of scientific visualization. 
 
 \textbf{Assoc. Prof. Jan Pale\v{c}ek} is currently heading his own Structural Proteins of Eukaryotic Chromosomes group at  DFGP (Faculty of Science) at the Masaryk University. 
 In addition, he is a senior researcher in Genomics and Proteomics of the Plant Systems program at CEITEC MU. 
-He received his Dr.rer.nat. (equivalent to a PhD in biochemistry) from the Vienna University (Austria) in 1998 and habilitated (in molecular biology) at the Masaryk University (Czech Republic) in 2012. 
+He received his Dr.rer.nat. (equivalent to a PhD in biochemistry) from the University of Vienna (Austria) in 1998 and habilitated (in molecular biology) at the Masaryk University (Czech Republic) in 2012. 
 He is interested in protein-protein interactions and protein complexes. 
 Since his postdoctoral stay at Sussex University (United Kingdom, from 2002 till 2006), he focuses on the architecture and evolution of the SMC and MAGE protein complexes. 
 Dr. Pale\v{c}ek was awarded with a Czech Science Foundation (CSF) grant to study a "Role of non-SMC proteins in stabilization and processing of stalled replication forks" (GA13-00774S, 2013--2016).
@@ -761,7 +762,7 @@ Computation time on a grid architecture will be provided free of charge by the N
 
 \paragraph{Personnel}
 Apart from the applicants and the staff at the institutions who will participate in this research project, we request two full-time PhD positions, who will conduct the proposed research full time. 
-One position will be covered by three part-time contracts for Katar\'{i}na Furmanov\'{a}, Adam Jur\v{c}\'{i}k and one of the new PhD student. 
+One position will be covered by three part-time contracts for Katar\'{i}na Furmanov\'{a}, Adam Jur\v{c}\'{i}k and one new PhD student. 
 They will be supervised by Dr. Barbora Kozl\'{i}kov\'{a}.
 Additionally to this, Dr. Pale\v{c}ek will be 20\% engaged in the project.
 %Based on our previous experience with similar research projects, we estimate that the time needed to achieve the goals of this project will require three years for the junior researcher position.
@@ -808,13 +809,8 @@ Yearly costs      & 102 106,3 & 90 279,53 & 90 279,53  & 282 665,36 & EUR \\
 
 \section{Ethical Aspects}
 \vspace{-4mm}
-Proposed project includes several experiments as part of the scientific investigation, which will be performed in form of user studies. 
-The studies might contain off the shelf non-invasive surveillance technologies such as eye-tracking or head-mounted displays for example, and will generally measure user response or effectiveness in completing particular tasks. 
+Proposed project includes several experiments as part of the scientific investigation, which will be performed in form of expert feedback to a demonstration of our prototype implementation. 
 There will be absolutely no scenarios, which would put the subjects into danger or risking their health. 
-Such experiment will include only volunteering subjects, who will explicitly agree with the roles before being recruited to the experiments. 
-%Each study participant will receive a small financial compensation corresponding to the time and effort contributed. 
-This is a common policy for the visualization research disciplines and human-computer interaction study, and experimental design will not attempt to cross the frame of standard practices. 
-Each subject will be asked for an explicit paper agreement on study participation and data publication as part of the study without any ethics committee approval. 
 Resulting data that will be included in the publications will be anonymized. 
 All personal videos, images, questionnaires as well as their paper agreements will be stored on an encrypted digital storage device.
 
